@@ -12,7 +12,7 @@ export function ServiceCard({ service }: { service: Service }) {
     <article className="plate flex flex-col">
       <Art name={service.art} ratio="1/1" className="border-b border-rule" />
       <div className="flex flex-1 flex-col p-5 sm:p-6">
-        <p className="type-label text-accent-deep">{service.group}</p>
+        <p className="type-label text-ink-3">{service.group}</p>
         <h3 className="type-display mt-2.5 text-[1.375rem]">{service.label}</h3>
         <p className="mt-3 text-[0.9375rem] leading-relaxed text-ink-2">
           {service.blurb}

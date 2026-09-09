@@ -665,7 +665,7 @@ function NoHoursFallback() {
     <div className="flex flex-col gap-8">
       <EmergencyLane variant="block" />
       <div className="plate border-ink border-t-[6px] p-6 sm:p-8">
-        <p className="type-label text-accent-deep">Janji temu</p>
+        <p className="type-label text-ink-3">Janji temu</p>
         <h2 className="type-display mt-3 text-[clamp(1.5rem,4.6vw,2.125rem)] h-budget-loose">
           Buat janji lewat WhatsApp
         </h2>
