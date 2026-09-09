@@ -73,9 +73,9 @@ export function bookingMessage(b: BookingMessageInput, pageUrl: string): string 
     ["Jenis layanan", b.serviceLabel],
     [
       "Keluhan yang dicentang",
-      b.symptomLabels.length ? b.symptomLabels.join(", ") : "—",
+      b.symptomLabels.length ? b.symptomLabels.join(", ") : "tidak ada",
     ],
-    ["Keterangan tambahan", b.notes.trim() || "—"],
+    ["Keterangan tambahan", b.notes.trim() || "tidak ada"],
     ["Tanggal", formatDateLong(b.date)],
     ["Waktu", `${b.time.replace(":", ".")} ${CLINIC.timezoneLabel}`],
   ];

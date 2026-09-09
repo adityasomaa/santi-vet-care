@@ -155,7 +155,7 @@ export function weeklySchedule(): { days: string; hours: string }[] {
           ? iv
               .map(
                 (i) =>
-                  `${formatClock(toMinutes(i.open))}–${formatClock(toMinutes(i.close))}`,
+                  `${formatClock(toMinutes(i.open))}-${formatClock(toMinutes(i.close))}`,
               )
               .join(", ")
           : "Tutup",
@@ -166,7 +166,7 @@ export function weeklySchedule(): { days: string; hours: string }[] {
   for (const row of rows) {
     const last = merged[merged.length - 1];
     if (last && last.hours === row.hours) {
-      last.days = `${last.days.split("–")[0]}–${row.day}`;
+      last.days = `${last.days.split("-")[0]}-${row.day}`;
     } else {
       merged.push({ days: row.day, hours: row.hours });
     }

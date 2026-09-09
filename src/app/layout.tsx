@@ -11,8 +11,8 @@ import { TransitionProvider } from "@/components/Transition";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${CLINIC.name} — Klinik Hewan di Denpasar`,
-    template: `%s — ${CLINIC.name}`,
+    default: `${CLINIC.name} - Klinik Hewan di Denpasar`,
+    template: `%s - ${CLINIC.name}`,
   },
   description:
     "Praktek dokter hewan di Denpasar Utara untuk anjing dan kucing. Lihat status buka, alamat, dan jam praktek, lalu buat janji temu lewat WhatsApp.",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     locale: "id_ID",
     url: SITE_URL,
     siteName: CLINIC.name,
-    title: `${CLINIC.name} — Klinik Hewan di Denpasar`,
+    title: `${CLINIC.name} - Klinik Hewan di Denpasar`,
     description:
       "Praktek dokter hewan di Denpasar Utara untuk anjing dan kucing. Status buka, alamat, dan janji temu lewat WhatsApp.",
     images: [
@@ -42,13 +42,13 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 675,
-        alt: `${CLINIC.name} — ${CLINIC.tagline}`,
+        alt: `${CLINIC.name}, ${CLINIC.tagline}`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${CLINIC.name} — Klinik Hewan di Denpasar`,
+    title: `${CLINIC.name} - Klinik Hewan di Denpasar`,
     description:
       "Praktek dokter hewan di Denpasar Utara untuk anjing dan kucing.",
     images: ["/og.png"],

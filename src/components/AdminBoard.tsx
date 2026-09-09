@@ -84,12 +84,12 @@ export function AdminBoard() {
       <div className="plate border-ink border-t-[6px] bg-accent-soft p-5 sm:p-6">
         <p className="type-label text-accent-deep">Halaman demo</p>
         <h1 className="type-display mt-3 text-[clamp(1.5rem,4.6vw,2.125rem)] h-budget-loose">
-          Papan janji temu — demonstrasi
+          Papan janji temu
         </h1>
         <p className="mt-4 max-w-[64ch] text-[1.0625rem] leading-relaxed text-ink-2">
           Halaman ini memperagakan cara klinik akan mengelola janji temu. Datanya
-          diambil dari penyimpanan peramban ini saja — bukan dari server klinik,
-          tanpa login, dan tidak berisi data pasien sungguhan. Janji temu yang
+          diambil dari penyimpanan peramban ini saja. Bukan dari server klinik,
+          tanpa login, dan tanpa data pasien sungguhan. Janji temu yang
           dibuat di perangkat lain tidak akan muncul di sini.
         </p>
       </div>
@@ -254,7 +254,7 @@ export function AdminBoard() {
                         <span className="mt-1 block text-ink-3">{b.notes}</span>
                       )}
                       {b.symptomLabels.length === 0 && !b.notes && (
-                        <span className="text-ink-3">—</span>
+                        <span className="text-ink-3">Tidak ada</span>
                       )}
                     </td>
                     <td className="px-4 py-4">

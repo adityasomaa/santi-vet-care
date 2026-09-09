@@ -3,7 +3,7 @@ import { CLINIC } from "@/data/clinic";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: `${CLINIC.name} — Klinik Hewan Denpasar`,
+    name: `${CLINIC.name} - Klinik Hewan Denpasar`,
     short_name: CLINIC.name,
     description: CLINIC.tagline,
     start_url: "/",

@@ -54,7 +54,7 @@ export function Header() {
           <TransitionLink
             href="/"
             className="-m-2 p-2"
-            aria-label={`${CLINIC.name} — ke beranda`}
+            aria-label={`${CLINIC.name}, ke beranda`}
           >
             <Wordmark />
           </TransitionLink>

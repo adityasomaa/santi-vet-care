@@ -321,7 +321,7 @@ export function DatePicker({
                             tabIndex={-1}
                             disabled={!selectable}
                             aria-selected={isSelected}
-                            aria-label={`${formatDateLong(k)}${selectable ? "" : " — tidak tersedia"}`}
+                            aria-label={`${formatDateLong(k)}${selectable ? "" : ", tidak tersedia"}`}
                             onClick={() => {
                               onChange(k);
                               closePanel();
