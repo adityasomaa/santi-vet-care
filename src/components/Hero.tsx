@@ -67,17 +67,17 @@ export function Hero() {
               <WhatsAppLink
                 label="WhatsApp (hero)"
                 weight="primary"
-                className="sm:min-w-[13rem] sm:flex-1"
+                className="sm:flex-auto"
                 body="Halo Santi Vet Care, saya ingin bertanya."
               />
-              <CallLink weight="solid" className="sm:flex-1">
+              <CallLink weight="solid" className="sm:flex-auto">
                 {CLINIC.phoneDisplay}
               </CallLink>
               <a
                 href={CLINIC.mapsDirectionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="plate-interactive inline-flex min-h-14 items-center justify-center gap-3 px-5 py-3.5 text-[0.9375rem] font-semibold sm:flex-1"
+                className="plate-interactive inline-flex min-h-14 items-center justify-center gap-3 px-5 py-3.5 text-[0.9375rem] font-semibold sm:flex-auto"
               >
                 <RouteMark />
                 Rute ke klinik
