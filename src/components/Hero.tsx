@@ -30,7 +30,7 @@ export function Hero() {
       style={{ ["--poleng-unit" as string]: "1.75rem" }}
       aria-labelledby="hero-title"
     >
-      <div className="shell flex flex-1 flex-col justify-center py-10 lg:py-14">
+      <div className="shell fab-clear flex flex-1 flex-col justify-center pt-10 lg:pt-14">
         <div className="grid flex-1 items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.82fr)] lg:gap-16">
           {/* --------------------------------------------------- left column */}
           <div className="flex flex-col">

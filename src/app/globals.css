@@ -44,8 +44,14 @@
   --z-cookie: 500;
   --z-skip: 600;
 
-  /* Height the floating action rail reserves at the bottom of every page so it
-     never covers the last control. Consumed by .page-bottom-gap. */
+  /* Height of the floating action rail itself. Constant — the cookie banner
+     does not inflate it, because the banner is dismissible and a full-viewport
+     hero cannot afford to reserve space for something temporary. */
+  --fab-rail: 5.5rem;
+
+  /* Space reserved at the bottom of every page so nothing ends up underneath
+     the rail. The cookie banner raises this while it is visible. Consumed by
+     .page-bottom-gap. */
   --fab-reserve: 5.5rem;
   color-scheme: light;
 }
@@ -242,6 +248,18 @@
   @media (min-width: 64rem) {
     .page-bottom-gap {
       padding-bottom: 3rem;
+    }
+  }
+
+  /* For a section that is exactly one viewport tall. Its own last line has to
+     clear the floating rail, because the page-level gap sits at the end of the
+     document and does nothing for content pinned inside the first screen. */
+  .fab-clear {
+    padding-bottom: calc(var(--fab-rail) + env(safe-area-inset-bottom, 0px));
+  }
+  @media (min-width: 64rem) {
+    .fab-clear {
+      padding-bottom: 3.5rem;
     }
   }
   .shell {
