@@ -26,11 +26,14 @@ export function Hero() {
 
   return (
     <section
-      className="gate relative flex min-h-[100svh] flex-col"
+      /* One screen means header + hero, not header + a full screen. The header
+         is sticky and 4rem tall (4.5rem from lg), so a bare 100svh here would
+         push the hero 64px past the fold and bury its last line. */
+      className="gate relative flex min-h-[calc(100svh-4rem)] flex-col lg:min-h-[calc(100svh-4.5rem)]"
       style={{ ["--poleng-unit" as string]: "1.75rem" }}
       aria-labelledby="hero-title"
     >
-      <div className="shell fab-clear flex flex-1 flex-col justify-center pt-10 lg:pt-14">
+      <div className="shell fab-clear flex flex-1 flex-col justify-center pt-8 lg:pt-14">
         <div className="grid flex-1 items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.82fr)] lg:gap-16">
           {/* --------------------------------------------------- left column */}
           <div className="flex flex-col">
@@ -38,7 +41,7 @@ export function Hero() {
 
             {/* The status plate leads. Rendered only once the clock is read on
                 the client, and not at all when hours are unconfigured. */}
-            <div className="mt-6">
+            <div className="mt-5 lg:mt-6">
               <OpenStatusPlate />
             </div>
 
@@ -49,18 +52,18 @@ export function Hero() {
                 paragraph, where length costs nothing. */}
             <h1
               id="hero-title"
-              className="type-display mt-7 text-[clamp(2.25rem,6.6vw,3.75rem)] h-budget"
+              className="type-display mt-6 text-[clamp(2.125rem,6.4vw,3.75rem)] h-budget lg:mt-7"
             >
               Klinik hewan di Denpasar
             </h1>
 
-            <p className="mt-6 max-w-[46ch] text-[1.0625rem] leading-relaxed text-ink-2">
+            <p className="mt-5 max-w-[46ch] text-base leading-[1.55] text-ink-2 lg:mt-6 lg:text-[1.0625rem] lg:leading-relaxed">
               {CLINIC.name} menangani anjing dan kucing di Ubung Kaja, Denpasar
               Utara. Hubungi klinik langsung, atau buat janji temu dengan
               keterangan hewan Anda.
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <div className="mt-6 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap lg:mt-8 lg:gap-3">
               <WhatsAppLink
                 label="WhatsApp (hero)"
                 weight="primary"
@@ -81,12 +84,12 @@ export function Hero() {
               </a>
             </div>
 
-            <address className="mt-8 flex flex-col gap-1 border-t border-rule pt-6 not-italic">
-              <p className="text-[0.9375rem] leading-relaxed text-ink-2">
+            <address className="mt-6 flex flex-col gap-1 border-t border-rule pt-4 not-italic lg:mt-8 lg:pt-6">
+              <p className="text-sm leading-snug text-ink-2 lg:text-[0.9375rem] lg:leading-relaxed">
                 {fullAddress()}
               </p>
               {schedule.length > 0 && (
-                <p className="text-[0.9375rem] text-ink-3">
+                <p className="text-sm text-ink-3 lg:text-[0.9375rem]">
                   {schedule
                     .map((r) => `${r.days} ${r.hours}`)
                     .join(" · ")}{" "}
