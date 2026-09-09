@@ -37,7 +37,7 @@ export function Hero() {
         <div className="grid flex-1 items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.82fr)] lg:gap-16">
           {/* --------------------------------------------------- left column */}
           <div className="flex flex-col">
-            <p className="type-label text-accent-deep">{CLINIC.tagline}</p>
+            <p className="type-label text-ink-3">{CLINIC.tagline}</p>
 
             {/* The status plate leads. Rendered only once the clock is read on
                 the client, and not at all when hours are unconfigured. */}
@@ -52,7 +52,7 @@ export function Hero() {
                 paragraph, where length costs nothing. */}
             <h1
               id="hero-title"
-              className="type-display mt-6 text-[clamp(2.125rem,6.4vw,3.75rem)] h-budget lg:mt-7"
+              className="type-display mt-6 text-[clamp(1.75rem,4.6vw,2.75rem)] h-budget lg:mt-7"
             >
               Klinik hewan di Denpasar
             </h1>

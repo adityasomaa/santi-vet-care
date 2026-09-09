@@ -33,7 +33,7 @@ export function SectionHeader({
   const centered = align === "center";
   return (
     <header className={centered ? "flex flex-col items-center text-center" : ""}>
-      <p className="type-label text-accent-deep">{label}</p>
+      <p className="type-label text-ink-3">{label}</p>
       <Heading
         className={`type-display mt-4 text-[clamp(1.75rem,6.2vw,3.25rem)] ${
           loose ? "h-budget-loose" : "h-budget"

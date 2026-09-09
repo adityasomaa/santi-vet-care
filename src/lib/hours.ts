@@ -30,8 +30,10 @@ export type OpenState =
     }
   | {
       status: "open";
-      /** Short word for the plate. Always accompanied by text, never colour
-       *  alone. */
+      /** The one word the plate is built around. This is what someone reads
+       *  from across a room while holding an animal. */
+      word: string;
+      /** Fuller phrase, for the compact variant and assistive tech. */
       label: string;
       /** e.g. "Tutup pukul 17.00" */
       detail: string;
@@ -39,6 +41,7 @@ export type OpenState =
     }
   | {
       status: "closed";
+      word: string;
       label: string;
       /** e.g. "Buka lagi Senin pukul 09.00" — or a plain sentence when the
        *  next opening is further out than we will look. */
@@ -184,6 +187,7 @@ export function getOpenState(now: Date): OpenState {
     if (minutes >= open && minutes < close) {
       return {
         status: "open",
+        word: "Buka",
         label: "Buka sekarang",
         detail: `Tutup pukul ${formatClock(close)} ${CLINIC.timezoneLabel}`,
         closesAt: instantFor(dateKey, close),
@@ -206,6 +210,7 @@ export function getOpenState(now: Date): OpenState {
             : `${DAY_NAMES_ID[wd]}`;
       return {
         status: "closed",
+        word: "Tutup",
         label: "Sedang tutup",
         detail: `Buka lagi ${when} pukul ${formatClock(open)} ${CLINIC.timezoneLabel}`,
         opensAt: instantFor(key, open),
@@ -215,6 +220,7 @@ export function getOpenState(now: Date): OpenState {
 
   return {
     status: "closed",
+    word: "Tutup",
     label: "Sedang tutup",
     detail: "Jadwal buka berikutnya belum tersedia.",
     opensAt: null,

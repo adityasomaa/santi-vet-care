@@ -145,7 +145,7 @@
       var(--color-ink) 0 var(--poleng-unit, 1.5rem),
       transparent var(--poleng-unit, 1.5rem) calc(var(--poleng-unit, 1.5rem) * 2)
     );
-    opacity: 0.09;
+    opacity: 0.15;
     pointer-events: none;
     z-index: var(--z-content);
   }
@@ -194,6 +194,15 @@
     letter-spacing: -0.02em;
     line-height: 0.94;
     text-wrap: balance;
+  }
+  /* Form fields live on the one surface someone fills in one-handed under
+     stress. They get a plain, readable label register — not the 11px all-caps
+     signboard micro-type used for section titles. */
+  .type-field-label {
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.3;
+    letter-spacing: 0;
   }
   .type-label {
     font-stretch: 108%;

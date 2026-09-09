@@ -32,7 +32,11 @@ If a new component needs a decision, ask which of those four it expresses.
 
 ## Colour
 
-Tokens live in the `@theme` block of `src/app/globals.css` and nowhere else.
+Tokens live in the `@theme` block of `src/app/globals.css`. Two deliberate
+exceptions: the focus ring uses a 2px radius so it does not read as a plate,
+and four overlay elements carry a blurred `rgba()` ambient shadow (cookie
+banner, calendar, listbox, floating rail) because they float over content the
+hairline system was never designed to separate them from.
 `npm run audit:contrast` parses that block; **16/16 required pairs pass WCAG
 AA**. Re-run it after any colour change — it is wired to fail the command.
 
@@ -50,9 +54,17 @@ AA**. Re-run it after any colour change — it is wired to fail the command.
 | `--color-accent-deep` | `#7d4406` | accent as text or icon on a light ground |
 | `--color-accent-soft` | `#fdf0d9` | accent tint ground |
 
-**Strategy: restrained.** Neutrals plus one accent. The accent is not
-decoration — it marks state and the primary action, and nothing else. If
-marigold appears somewhere that is neither, it is a bug.
+**Strategy: restrained.** Neutrals plus one accent. Marigold is allowed in
+exactly three roles and nowhere else:
+
+1. **State** — the open/closed plate, a selected slot, a ticked symptom.
+2. **The primary action** on a surface — one per surface.
+3. **Error** — an erroring field, its 2px border, its tint, and its message.
+   An error is a state, and this palette has no second hue to spend on it.
+
+Section labels are `--color-ink-3`, not accent. They were accent during the
+build and it diluted the signal to the point where nothing on the page stood
+out — which is the one thing this world exists to prevent.
 
 Two rules the audit enforces as *forbidden*, so a future token tweak cannot
 quietly make them tempting:
@@ -79,7 +91,10 @@ Two registers, one voice:
 - `.type-display` — `font-stretch: 118%`, weight 700, line-height 0.94,
   `text-wrap: balance`. The signboard register. Headings and the status plate.
 - `.type-label` — `font-stretch: 108%`, weight 600, 11px, `0.14em` tracking,
-  uppercase. Section labels and small state text.
+  uppercase. Section labels and small state text. **Never a form label.**
+- `.type-field-label` — 14px, weight 600, normal case, no tracking. Every input
+  on the appointment form. The signboard micro-register is unreadable as a
+  field label on the one surface someone fills in one-handed under stress.
 - Body — the normal width at 15–17px. Deliberately unremarkable under a
   nine-field form.
 
@@ -108,7 +123,8 @@ the title tag and the lead paragraph, where length is free.
 
 ## Components
 
-- **`.plate`** — the atom. Square corners, one hairline. Never rounded.
+- **`.plate`** — the atom. Square corners, one hairline. Never rounded. The
+  focus ring is the single exception, at 2px.
 - **`.plate-ink`** — ink fill, paper text. Strong secondary action.
 - **`.plate-accent`** — accent fill, ink text, **ink hairline**. The one action
   that matters on a given surface.
@@ -211,6 +227,17 @@ Every graphic is a deterministic generated SVG (`npm run gen:art`).
   labelled, not just dimmed.
 - The honeypot uses `clip-path`, not `left:-9999px` — a negative offset escapes
   any ancestor that is not positioned.
+
+---
+
+## One deliberate departure from the craft floor
+
+The finish review flagged the section label above each headline as a "kicker",
+which the Impeccable craft floor refuses. It stays, because the client brief
+specifies the section anatomy directly: *judul section, headline, deskripsi
+singkat, CTA*, in that order, via one shared `SectionHeader`. A brief-pinned
+requirement outranks the generic floor. What did change is its colour — it no
+longer spends the accent.
 
 ---
 

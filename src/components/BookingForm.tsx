@@ -435,7 +435,7 @@ function Fieldset({
 }) {
   return (
     <fieldset className="border-0 p-0">
-      <legend className="type-label mb-5 text-accent-deep">{legend}</legend>
+      <legend className="type-label mb-5 text-ink-3">{legend}</legend>
       <div className="grid gap-5 sm:grid-cols-2">{children}</div>
     </fieldset>
   );
@@ -458,7 +458,7 @@ function Field({
   const id = `f-${label.toLowerCase().replace(/\s+/g, "-")}`;
   return (
     <div data-field-error={error ? "true" : undefined}>
-      <label htmlFor={id} className="type-label block text-ink-2">
+      <label htmlFor={id} className="type-field-label block text-ink-2">
         {label}
         {required && <span className="text-accent-deep"> *</span>}
       </label>
@@ -469,7 +469,9 @@ function Field({
         aria-invalid={error ? true : undefined}
         aria-describedby={error ? `${id}-error` : undefined}
         className={`mt-2 min-h-14 w-full px-4 py-3 text-[1.0625rem] ${
-          error ? "border border-accent-deep bg-paper" : "plate-interactive"
+          error
+            ? "border-2 border-accent-deep bg-accent-soft"
+            : "plate-interactive"
         }`}
         {...rest}
       />
@@ -505,7 +507,7 @@ function SymptomPicker({
 }) {
   return (
     <fieldset className="border-0 p-0">
-      <legend className="type-label mb-2 text-accent-deep">Keluhan</legend>
+      <legend className="type-label mb-2 text-ink-3">Keluhan</legend>
       <p className="mb-5 max-w-[58ch] text-[0.9375rem] leading-relaxed text-ink-2">
         Centang yang Anda amati, lalu tambahkan keterangan bebas di bawah.
         Bagian ini opsional dan bukan alat diagnosis — keterangannya diteruskan
@@ -535,7 +537,7 @@ function SymptomPicker({
       </div>
 
       <div className="mt-6" data-field-error={error ? "true" : undefined}>
-        <label htmlFor="notes" className="type-label block text-ink-2">
+        <label htmlFor="notes" className="type-field-label block text-ink-2">
           Keterangan tambahan
         </label>
         <textarea
@@ -547,7 +549,9 @@ function SymptomPicker({
           placeholder="Sejak kapan, apa yang berubah, dan hal lain yang menurut Anda perlu diketahui."
           aria-invalid={error ? true : undefined}
           className={`mt-2 w-full resize-y px-4 py-3 text-[1.0625rem] leading-relaxed ${
-            error ? "border border-accent-deep bg-paper" : "plate-interactive"
+            error
+            ? "border-2 border-accent-deep bg-accent-soft"
+            : "plate-interactive"
           }`}
         />
         {error && (

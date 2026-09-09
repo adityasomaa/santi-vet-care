@@ -212,7 +212,7 @@ export function Listbox({
     <div>
       <label
         htmlFor={id}
-        className="type-label block text-ink-2"
+        className="type-field-label block text-ink-2"
         onClick={() => triggerRef.current?.focus()}
       >
         {label}
@@ -237,7 +237,9 @@ export function Listbox({
         onClick={() => (open ? closeList() : openList())}
         onKeyDown={onKeyDown}
         className={`mt-2 flex min-h-14 w-full items-center justify-between gap-3 px-4 py-3 text-left text-[1.0625rem] ${
-          error ? "border border-accent-deep bg-paper" : "plate-interactive"
+          error
+            ? "border-2 border-accent-deep bg-accent-soft"
+            : "plate-interactive"
         } ${disabled ? "cursor-not-allowed opacity-60" : ""}`}
       >
         <span className={selected ? "font-medium" : "text-ink-3"}>

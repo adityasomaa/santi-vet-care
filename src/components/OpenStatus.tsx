@@ -94,22 +94,28 @@ export function OpenStatusPlate({
 
   return (
     <div className={className} role="status">
-      {/* The status is the question the visitor arrived with, so it is sized
-          like an answer, not like a badge. */}
+      {/* The status word is the largest thing on the page — larger than the
+          clinic's own name and larger than the headline — because it is the
+          question the visitor arrived with. The fuller phrase is still
+          announced to assistive tech via aria-label. */}
       <div
-        className={`inline-flex items-center gap-3 px-5 py-3 ${
+        className={`inline-flex items-baseline gap-4 px-5 py-3 sm:px-6 sm:py-4 ${
           open ? "plate-accent" : "plate-ink"
         }`}
+        aria-label={state.label}
       >
         <StateMark open={open} />
         <span
-          className="text-[clamp(1rem,3vw,1.375rem)] font-bold tracking-[0.01em]"
-          style={{ fontStretch: "112%" }}
+          aria-hidden="true"
+          className="type-display text-[clamp(2.125rem,7.5vw,3.5rem)] uppercase"
         >
-          {state.label}
+          {state.word}
         </span>
       </div>
-      <p className="mt-3 text-[1.0625rem] font-medium text-ink-2">{state.detail}</p>
+      <p className="mt-3 text-[1.0625rem] font-medium text-ink-2">
+        <span className="sr-only">{state.label}. </span>
+        {state.detail}
+      </p>
       {faked && (
         <p className="mt-1 text-xs font-semibold text-accent-deep">
           Jam disimulasikan untuk pengujian (parameter ?now=).
@@ -125,7 +131,13 @@ export function OpenStatusPlate({
  */
 function StateMark({ open }: { open: boolean }) {
   return (
-    <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" className="shrink-0">
+    <svg
+      viewBox="0 0 16 16"
+      width="18"
+      height="18"
+      aria-hidden="true"
+      className="shrink-0 self-center"
+    >
       {open ? (
         <circle cx="8" cy="8" r="6" fill="currentColor" />
       ) : (
