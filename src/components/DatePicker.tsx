@@ -225,7 +225,7 @@ export function DatePicker({
       </button>
 
       {error && (
-        <p id={errorId} className="mt-2 text-sm font-medium text-accent-deep">
+        <p id={errorId} role="alert" className="mt-2 text-sm font-medium text-accent-deep">
           {error}
         </p>
       )}

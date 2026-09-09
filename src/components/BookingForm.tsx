@@ -476,7 +476,11 @@ function Field({
         {...rest}
       />
       {error && (
-        <p id={`${id}-error`} className="mt-2 text-sm font-medium text-accent-deep">
+        <p
+          id={`${id}-error`}
+          role="alert"
+          className="mt-2 text-sm font-medium text-accent-deep"
+        >
           {error}
         </p>
       )}
@@ -555,7 +559,9 @@ function SymptomPicker({
           }`}
         />
         {error && (
-          <p className="mt-2 text-sm font-medium text-accent-deep">{error}</p>
+          <p role="alert" className="mt-2 text-sm font-medium text-accent-deep">
+            {error}
+          </p>
         )}
       </div>
     </fieldset>
@@ -647,7 +653,7 @@ function SlotPicker({
         </>
       )}
 
-      {error && <p className="mt-2 text-sm font-medium text-accent-deep">{error}</p>}
+      {error && <p role="alert" className="mt-2 text-sm font-medium text-accent-deep">{error}</p>}
     </div>
   );
 }
