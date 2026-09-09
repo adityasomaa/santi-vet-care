@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-hidden="true"><rect width="600" height="600" fill="#efefea"/><rect x="0" y="0" width="46.154" height="46" fill="#141414" opacity="0.07"/><rect x="92.308" y="0" width="46.154" height="46" fill="#141414" opacity="0.07"/><rect x="184.615" y="0" width="46.154" height="46" fill="#141414" opacity="0.07"/><rect x="276.923" y="0" width="46.154" height="46" fill="#141414" opacity="0.07"/><rect x="369.231" y="0" width="46.154" height="46" fill="#141414" opacity="0.07"/><rect x="461.538" y="0" width="46.154" height="46" fill="#141414" opacity="0.07"/><rect x="553.846" y="0" width="46.154" height="46" fill="#141414" opacity="0.07"/>
+     <path d="M300 132 L500 288 v212 H100 V288 Z" fill="#fafaf8" stroke="#141414" stroke-width="7" stroke-linejoin="round"/>
+     <rect x="196" y="352" width="208" height="148" fill="#fdf0d9" stroke="#141414" stroke-width="7"/>
+     <g transform="translate(300 452) scale(0.96)" fill="#141414">
+    <path d="M-40 -20 L-34 -60 L-4 -36 Z"/>
+    <path d="M40 -20 L34 -60 L4 -36 Z"/>
+    <path d="M0 -38 q38 0 38 36 q0 36 -38 42 q-38 -6 -38 -42 q0 -36 38 -36 Z"/>
+  </g>
+     <line x1="100" y1="500" x2="500" y2="500" stroke="#141414" stroke-width="9"/></svg>

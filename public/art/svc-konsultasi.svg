@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-hidden="true"><rect width="600" height="600" fill="#efefea"/><rect x="0" y="0" width="46.154" height="46" fill="#141414" opacity="0.07"/><rect x="92.308" y="0" width="46.154" height="46" fill="#141414" opacity="0.07"/><rect x="184.615" y="0" width="46.154" height="46" fill="#141414" opacity="0.07"/><rect x="276.923" y="0" width="46.154" height="46" fill="#141414" opacity="0.07"/><rect x="369.231" y="0" width="46.154" height="46" fill="#141414" opacity="0.07"/><rect x="461.538" y="0" width="46.154" height="46" fill="#141414" opacity="0.07"/><rect x="553.846" y="0" width="46.154" height="46" fill="#141414" opacity="0.07"/>
+     <rect x="86" y="150" width="270" height="168" fill="#fafaf8" stroke="#141414" stroke-width="7"/>
+     <path d="M140 318 L140 386 L206 318 Z" fill="#fafaf8" stroke="#141414" stroke-width="7" stroke-linejoin="round"/>
+     <rect x="252" y="272" width="262" height="160" fill="#f0a11a" stroke="#141414" stroke-width="7"/>
+     <line x1="128" y1="200" x2="314" y2="200" stroke="#141414" stroke-width="9" stroke-linecap="round"/>
+     <line x1="128" y1="240" x2="266" y2="240" stroke="#141414" stroke-width="9" stroke-linecap="round"/>
+     <line x1="292" y1="322" x2="474" y2="322" stroke="#141414" stroke-width="9" stroke-linecap="round"/>
+     <line x1="292" y1="362" x2="410" y2="362" stroke="#141414" stroke-width="9" stroke-linecap="round"/></svg>
