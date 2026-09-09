@@ -359,6 +359,44 @@ with a single `aria-label` on the parent and `aria-hidden` on the pieces.
 
 ---
 
+---
+
+## Verified on production, not on localhost
+
+Everything below was checked against https://santi-vet-care.onyxcreative.asia
+after the final deploy.
+
+| Check | Result |
+|---|---|
+| All routes | 7 public pages + `/admin` + sitemap + robots + og.png all 200; an unknown path returns 404 |
+| HTTPS on the custom subdomain | Valid certificate, 200 |
+| Horizontal overflow at 375 / 768 / 1440 | **Zero offenders** across every route, including the admin table |
+| Broken images / failed requests | None. Service artwork loads and each card is distinguishable at a glance |
+| Hamburger menu | Opens, closes, traps scroll, lists all five pages, layers above the floating rail |
+| Open/closed indicator | Verified in all three states by injecting a fake clock: open (Wed 10:00), closed with next opening (Wed 21:00), and Sunday. With `HOURS` set to `null` the indicator disappears entirely and the booking form falls back to WhatsApp |
+| Appointment flow | Picked a service from the services page, confirmed it pre-filled, booked a slot, confirmed the slot then read **Penuh** and was unselectable, and confirmed past slots read **Lewat** |
+| WhatsApp message | Contains owner name, phone, species, pet name, age, service, ticked symptoms, notes, date, time, and the exact source URL including its query string |
+| Emergency flag | Switched on: the lane appears on the appointment and contact pages. Switched off: **zero** occurrences of the block in any rendered page, and no route exists to reach it |
+| Admin demo | Slot blocking writes and clears; Reset Demo asks for confirmation, then empties bookings and blocks and shows the empty state |
+| Copy audit | Grep across all eight live pages for prices, ratings, review counts, vet names, credentials, facilities, 24-hour claims, cure words and superlatives: **zero hits** |
+| Typographic tells | Zero em-dashes and zero en-dashes in any visible text |
+| Contrast | 16/16 required token pairs pass WCAG AA |
+| Structured data | `VeterinaryCare` with full address, geo, and Mon-Sat opening hours; no rating, price, or staff claims |
+| `/admin` | `noindex, nofollow, nocache`, disallowed in robots.txt, absent from the sitemap |
+| Site icon | Transparent background confirmed on the deployed 512px file (all four corners alpha 0) |
+
+### Not verified
+
+Motion has been checked through the DOM, timings, and component state rather
+than watched frame by frame. The in-app browser pane did not composite reliably
+enough to judge the gate transition by eye. What that means concretely: the
+transition sequence, its watchdog, the scroll reset, and the reduced-motion path
+were all confirmed programmatically, and page-to-page navigation was exercised
+repeatedly on the live site, but nobody has yet *watched* the curtain part.
+Worth thirty seconds of your own eyes before you show the client.
+
+---
+
 ## Two deployment gotchas worth writing down
 
 **Vercel Deployment Protection cannot be turned off through Composio.**

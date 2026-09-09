@@ -137,6 +137,12 @@ Three button weights exist (`primary`, `solid`, `outline`) and no others. A
 stock component dropped into this vocabulary is a lapse; the listbox, calendar,
 slot grid, and checkboxes are all built in plate language.
 
+**Rows of plates use `flex-auto`, never `flex-1`.** `flex-1` sets the basis to
+zero and splits the row evenly regardless of label width, which squeezed the
+phone number 9px out of its own button at 1440. `flex-auto` still fills the row
+but bases each plate on its own content, so no label is ever narrower than the
+text inside it.
+
 Icons are drawn inline at the site's own line weight (2px, round caps) rather
 than pulled from an icon set.
 
