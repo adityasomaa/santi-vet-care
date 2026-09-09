@@ -3,8 +3,16 @@
 First website for **Santi Vet Care**, a veterinary practice in Ubung Kaja, North
 Denpasar, Bali.
 
-Live: https://santi-vet-care.onyxcreative.asia
-Vercel: https://santi-vet-care.vercel.app
+**Live:** https://santi-vet-care.onyxcreative.asia
+**Vercel alias:** https://santivetcare.vercel.app
+
+> `santi-vet-care.vercel.app` was already taken by another Vercel account and
+> returned HTTP 409. The nearest free name, `santivetcare.vercel.app`, was
+> claimed instead. Vercel's own auto-generated alias carries the team suffix
+> (`santi-vet-care-onyx-creative-asia.vercel.app`) and is not used as the
+> canonical URL. Every piece of metadata — canonical tags, Open Graph, sitemap,
+> robots, and the structured data — points at the custom subdomain
+> `santi-vet-care.onyxcreative.asia`, which is the final domain.
 
 ---
 

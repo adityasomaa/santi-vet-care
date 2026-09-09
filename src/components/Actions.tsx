@@ -25,7 +25,7 @@ const WEIGHT: Record<Weight, string> = {
 const BASE =
   "inline-flex min-h-14 items-center justify-center gap-3 px-5 py-3.5 " +
   "text-[0.9375rem] font-semibold leading-tight transition-[background-color,filter] " +
-  "duration-150 select-none";
+  "duration-150 select-none text-center";
 
 export function ActionPlate({
   weight = "outline",
@@ -131,7 +131,10 @@ export function CallLink({
   return (
     <a href={telHref(emergency)} className={`${BASE} ${WEIGHT[weight]} ${className}`}>
       <PhoneMark />
-      <span>{children ?? label}</span>
+      {/* A phone number that breaks mid-digits reads as two numbers. Only this
+          span is unbreakable; forcing nowrap on every button label would risk
+          overflow at 375px on the longer calls to action. */}
+      <span className="whitespace-nowrap tabular-nums">{children ?? label}</span>
     </a>
   );
 }
